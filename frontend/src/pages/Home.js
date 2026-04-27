@@ -1,4 +1,3 @@
-
 import "./Home.css"
 import ProductList from "./ProductList";
 function Home({products}) {
@@ -23,5 +22,6 @@ function Home({products}) {
     )
 
 }
+  
 
 export default Home;

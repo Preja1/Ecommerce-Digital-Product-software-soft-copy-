@@ -16,10 +16,13 @@ function Navbar() {
         <div className="nav-search">
         <input type="text" placeholder="Search..." className="search"/>
         <img src={emoji} alt="" className="search-emoji" />
-        </div>
+        </div >
+        <div>
         <Link to="/login " className="nav-login">
           Login
         </Link>
+        <Link to="/signup"><button>Sign Up</button></Link>
+        </div>
       </div>
     </nav>
   );

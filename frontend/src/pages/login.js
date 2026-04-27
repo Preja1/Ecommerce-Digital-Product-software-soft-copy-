@@ -1,24 +1,27 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "../media/loginlogo.png";
 import "./Login.css";
 
 function Login() {
-  const [auth, setAuth] = useState("");
+  const [auth, setAuth] = useState({email:"",password:""});
   function handleChange(e) {
     e.stopPropagation();
-    setAuth({ [e.target.name]: e.target.value });
+    setAuth({ ...auth,[e.target.name]: e.target.value });
   }
   function handleLogin(e) {
     e.preventDefault();
-    if (auth.email === "" || auth.password === "") {
+    if (auth.email==="" || auth.password === "") {
       alert("Please fill all fields and select an image!");
     } else {
     }
   }
   return (
-    <div className="login-card">
     <div className="login-container">
-      <h2>Login</h2>
+    <div className="login-card">
+      <div className="header-card">
+      <img src={logo} alt="Digital" className="logo" />
+      </div>
       <form onSubmit={handleLogin} className="login-form">
         <input
           type="email"
@@ -42,8 +45,9 @@ function Login() {
         Don't have an account? 
         <Link to="/signup">Sign Up</Link>
       </p>
+      </div>
     </div>
-    </div>
+    
   );
 }
 

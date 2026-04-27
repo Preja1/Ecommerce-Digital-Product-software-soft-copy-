@@ -1,7 +1,6 @@
-import "./ProductList.css";
+import "./ProductLists.css";
 
-function ProductList({
-  thumbnail,
+function ProductList({thumbnail,
   title,
   price,
   brand,
@@ -9,26 +8,24 @@ function ProductList({
   rating,
 }) {
   return (
-    <div className="card m-2">
-      <div className="product-container">
+    <div className="product-container">
+    <div className="card m-3">
+      
         <div className="card-header">
           <div
             className="product-images d-flex flex-row"
             style={{ width: "fit-content" }}
           >
+            <div className=" discount ms-auto" >{discountPercentage}%</div>
             <img src={thumbnail} alt={title} />
+            
             <span className="wishlist">♡</span>
           </div>
 
           <div className="card-body">
             <div className="d-flex flex-row gap-3">
               <div className="title">{title}</div>
-              <label
-                className="ms-auto"
-                style={{ minWidth: "48px", color: "red" }}
-              >
-                Rs {price}
-              </label>
+              
             </div>
           
 
@@ -36,16 +33,24 @@ function ProductList({
             <div className="brand" style={{ fontWeight: "bolder" }}>
               {brand}
             </div>
-            <div className="ms-auto">Rs {discountPercentage}</div>
+            <label
+                className="ms-auto"
+                style={{ minWidth: "48px", color: "red" }}
+              >
+                Rs {price}
+              </label>
+            
           </div>
+          
 
           <div className="d-flex flex-row gap-3">
             <span className="rating-number">☆{rating}</span>
+            
             <button
               className="ms-auto"
-              style={{ backgroundColor: "purple",fontSize:"12px" }}
+              
             >
-              Add to Cart
+              Details
             </button>
             </div>
           </div>
@@ -54,5 +59,6 @@ function ProductList({
     </div>
   );
 }
+
 
 export default ProductList;

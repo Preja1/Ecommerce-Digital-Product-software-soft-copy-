@@ -239,7 +239,7 @@ const products = [
   },
   {
     id: 15,
-    title: "JetBrains All Products Pack",
+    title: "JetBrains Pack",
     description: "All JetBrains software suite subscription",
     price: 499,
     discountPercentage: 10,
@@ -254,6 +254,7 @@ const products = [
       "https://picsum.photos/id/145/600/400",
     ],
   },
+  
 ];
 
 export default products;
